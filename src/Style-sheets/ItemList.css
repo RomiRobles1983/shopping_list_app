@@ -1,0 +1,128 @@
+
+.CreateList{
+  background-color: #f2f2f2;
+   margin: 0 auto;
+   padding:0;
+   box-sizing: border-box;
+   width: 650px;
+ } 
+
+ .items-list-container {
+  display: flex; /* 2 items per row*/
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 15px;
+  align-items: center;}
+
+.buttom-buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* FORM
+ General Styles of the form for the input of the items in the list */
+.item-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+/* style of the field where the item to be added is written */
+.item-input {
+    color: #838383;
+    width: 350px;
+    font-size: 21px;
+    background-color: white;
+    padding:7px 32px 7px 16px;
+    border-radius:4px 0  0 4px ;
+    border: 2px solid #80ceff;
+    outline: none;
+}
+
+/* Styles of the "Add Item" button */
+.item-button {
+    padding: 10px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+    background-color: #80ceff;
+    color: white;
+
+}
+
+    /* ITEM
+ General Styles of the form for the input of the items in the list */
+
+ /* Style for every item in the list */
+
+.item-container {
+  min-height: 30px;
+  background-color: #1f6896;
+  margin: 5px 0;
+  padding: 4px 10px 4px 10px;
+  display: flex;
+  align-items:flex-end;
+  border-radius: 7px;
+  cursor: pointer;
+  width: calc(45%); /* 2 items per column with a space of 10 px in the middle */
+}
+
+.item-text {
+  color: white;
+  font-size: 20px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	overflow-wrap: anywhere; /* For items with long text, so that it flows downwards */
+	text-align: left;
+}
+
+.remove-icon {
+  color: white;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+
+}
+
+/* Special styling for when an item is marked as "purchased".*/
+
+.item-container.purchased {
+  background-color: #838383;
+  text-decoration: line-through;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+  .CreateList{
+    width: 100%;
+    }
+  .item-container {
+    width: 95%; /* each item occupies 95% of the container width to align with the form */
+    
+  }
+
+
+ .item-input {
+    width: calc(60% - 5px); 
+    
+          }
+        
+.item-button {
+   width: calc(25% - 5px); 
+        
+          }
+        } 
+ 
