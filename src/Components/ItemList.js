@@ -101,32 +101,27 @@ const handleSaveList = async () => {
 };
   
 const clearListInfo = () => {
+  console.log('handleRemoveList function called');
   setItems([]);
   setLocalListName('');
 };
 
 const handleRemoveList = async () => {
-  clearListInfo();
+  try {
+    console.log('Removing list with name:', localListName);
+    const removedList = await removeList(localListName);
+    console.log('Value returned by removeList:', removedList);
 
-  // Verifica si la lista ya está guardada (tiene un _id)
-  if (itemsState.length > 0 && itemsState[0]._id) {
-    try {
-      console.log('Removing list with name:', localListName);
-
-      // Elimina la lista de la base de datos
-      const removedList = await removeList(localListName);
+    // Añade un pequeño retraso antes de imprimir el mensaje
+    setTimeout(() => {
       console.log('Lista eliminada:', removedList);
-    } catch (error) {
-      // Manejar errores específicos, si es un 404 (Not Found), puedes asumir que la lista no está en la base de datos
-      if (error.response && error.response.status === 404) {
-        console.log('La lista no está en la base de datos.');
-      } else {
-        console.error('Error al eliminar la lista:', error.message);
-      }
-    }
+    }, 100);
+  } catch (error) {
+    console.error('Error during removeList:', error);
   }
-  
 };
+
+
 
   return (
     <>
@@ -153,7 +148,8 @@ const handleRemoveList = async () => {
 ))}
         <div className="buttom-buttons-container">
           <BottomButton isSaveListButton={true} onClick={handleSaveList} />
-          <BottomButton isSaveListButton={false} onClick={handleRemoveList} />
+          <BottomButton isSaveListButton={false} onClick={() => { console.log('Button clicked'); handleRemoveList(); }} />
+
         </div>
       </div>
 
