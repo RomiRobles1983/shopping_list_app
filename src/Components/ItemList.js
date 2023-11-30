@@ -72,7 +72,7 @@ const addItem = (item) => {
 const handleSaveList = async () => {
   try {
     if (localListName.trim() === '') {
-      throw new Error('El nombre de la lista no puede estar vacío');
+      throw new Error('Your list has no name');
     }
 
     const listData = {
@@ -87,7 +87,7 @@ const handleSaveList = async () => {
     const savedList = await saveList(listData);
     console.log('Lista guardada:', savedList);
 
-    setMessage(`Tu lista ${localListName} se ha guardado.`);
+    setMessage(`Your list " ${localListName}" has been saved.`);
 
     // Espera 3 segundos antes de redirigir a la página de inicio
     setTimeout(() => {
@@ -96,7 +96,7 @@ const handleSaveList = async () => {
     }, 3000);
   } catch (error) {
     console.error('Error al guardar la lista:', error.message);
-    setMessage(`Tu lista ${localListName} no pudo ser guardada: ${error.message}`);
+    setMessage(`Your list "${localListName}" could not be saved: ${error.message}`);
   }
 };
   
@@ -107,10 +107,14 @@ const clearListInfo = () => {
 };
 
 const handleRemoveList = async () => {
+  clearListInfo ()
+
   try {
     console.log('Removing list with name:', localListName);
     const removedList = await removeList(localListName);
     console.log('Value returned by removeList:', removedList);
+
+    setMessage(`The list has been removed.`);
 
     // Añade un pequeño retraso antes de imprimir el mensaje
     setTimeout(() => {
@@ -120,6 +124,7 @@ const handleRemoveList = async () => {
     console.error('Error during removeList:', error);
   }
 };
+
 
 
 
