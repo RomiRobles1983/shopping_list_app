@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Lists = require ("../dbLists");
 const dbList = require("../dbLists");
+const { v4: uuidv4 } = require('uuid');
 
 // Open list
 
@@ -24,14 +25,28 @@ const createOrUpdateList = async (req, res) => {
 
     if (existingList) {
       // Si la lista existe, actualiza los elementos
-      existingList.items = items;
+      existingList.items = items.map(item => {
+        const newItem = {
+          ...item,
+          _id: item._id || uuidv4().toString(),
+        };
+        console.log('Generated _id for item:', newItem._id);
+        return newItem;
+      });
       const updatedList = await existingList.save();
       res.status(200).json(updatedList);
     } else {
       // Si la lista no existe, créala
       const newList = new Lists({
         name,
-        items,
+        items: items.map(item => {
+          const newItem = {
+            ...item,
+            _id: uuidv4().toString(),
+          };
+          console.log('Generated _id for item:', newItem._id);
+          return newItem;
+        }),
       });
 
       const savedList = await newList.save();
@@ -41,6 +56,8 @@ const createOrUpdateList = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+
 
         // Agregar un nuevo endpoint para abrir una lista por nombre
         const openListByName = async (req, res) => {

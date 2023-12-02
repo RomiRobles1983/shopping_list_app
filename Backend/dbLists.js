@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
+
 const listSchema = new Schema(
   {
     name: {
@@ -19,13 +20,16 @@ const listSchema = new Schema(
           default: false,
         },
         _id: {
-          type: String, // Cambia a String
+          type: String,
+          default: mongoose.Types.ObjectId,
         },
       },
     ],
   },
   { timestamps: true }
 );
+  
+
 
 const shoppingList = mongoose.model("shoppingLists", listSchema);
 

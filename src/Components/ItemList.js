@@ -20,16 +20,22 @@ function ItemList({ listName, items, onListNameChange }) {
   const openList = async (listName) => {
     try {
       const loadedList = await openListByName(listName);
-      
+  
       // Verifica si los elementos cargados tienen _id, si no, asigna uno nuevo
-      const updatedItems = loadedList.items.map(item => ({
-        ...item,
-        _id: item._id || uuidv4().toString()
-      }));
+      const updatedItems = loadedList.items.map(item => {
+        const newItem = {
+          ...item,
+          _id: item._id || uuidv4().toString()
+        };
+        console.log('Generated _id:', newItem._id); // Agrega esta línea para imprimir el _id generado
+        return newItem;
+      });
+  
+      // Imprime todos los _id generados
+      console.log('Generated _ids:', updatedItems.map(item => item._id));
   
       setItems(updatedItems);
       setLocalListName(loadedList.name || '');
-      setIsListOpen(true);
     } catch (error) {
       console.error('Error opening the list:', error.message);
     }

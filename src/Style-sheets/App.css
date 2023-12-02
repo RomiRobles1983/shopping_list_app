@@ -12,6 +12,7 @@
 } 
 
 .logo-container {
+  margin-top: 40px;
   width: 100%;
   margin: 20px;
   display: flex;
@@ -20,6 +21,7 @@
   }
   
   .logo {
+    margin-top: 40px;
   width:200px ;
   height: 70px;
   }

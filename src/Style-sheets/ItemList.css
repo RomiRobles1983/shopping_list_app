@@ -125,9 +125,22 @@
     width: 100%;
     }
   .item-container {
-    width: 95%; /* each item occupies 95% of the container width to align with the form */
+    width: 90%; /* each item occupies 95% of the container width to align with the form */
     
   }
+
+  .OpenList{
+    width: 100%;
+    }
+  .item-container {
+    width: 90%; /* each item occupies 95% of the container width to align with the form */
+    
+  }
+
+
+
+  .items-list-container {
+  justify-content: center;}
 
 
  .item-input {
@@ -139,5 +152,10 @@
    width: calc(25% - 5px); 
         
           }
+ .item-text {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
         } 
  
+      }
