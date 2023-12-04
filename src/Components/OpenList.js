@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';  // Agrega esta línea
 import ItemList from '../Components/ItemList';  // Ajusta la ruta según tu estructura
 import openListByName from "./api/OpenListByNameRequest";
-import "../Style-sheets/OpenList.css"
 
 function OpenList() {
   const { listName } = useParams();

@@ -1,6 +1,4 @@
 import React from "react";
-import "../Style-sheets/BottomButton.css";
-
 
 function BottomButton ({isSaveListButton, onClick}) {
   const classes = isSaveListButton ? "buttom-buttons save-list-button" : "buttom-buttons remove-list-button";

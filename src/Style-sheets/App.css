@@ -1,4 +1,4 @@
-
+/*General styles for the whole application.*/
 .App{
   margin: 0;
   padding:0;
@@ -25,6 +25,8 @@
   width:200px ;
   height: 70px;
   }
+
+/*General styles for the whole application in small screens*/
 
   @media (max-width: 767px) {
 

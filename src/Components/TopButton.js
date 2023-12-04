@@ -1,5 +1,4 @@
 import React from 'react';
-import "../Style-sheets/TopButton.css";
 
 function TopButton({ buttonText, isCreateListButton, onClick }) {
   return (

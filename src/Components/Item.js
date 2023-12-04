@@ -1,5 +1,4 @@
 import React from "react";
-// import "../Style-sheets/Items.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 function Item({ id, text, purchased, setAsPurchased, removeItem }) {

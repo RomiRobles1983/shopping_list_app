@@ -1,3 +1,4 @@
+/* Styles of the component when used in "OpenList" page*/
 
 .OpenList{
   background-color: #f2f2f2;
@@ -15,9 +16,10 @@
    box-sizing: border-box;
    width: 650px;
  } 
+/* Style of the container having the list of items (sorted in 2 columns)*/
 
  .items-list-container {
-  display: flex; /* 2 items per row*/
+  display: flex; 
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 15px;
@@ -28,9 +30,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 /* FORM
  General Styles of the form for the input of the items in the list */
+
 .item-form {
     width: 100%;
     display: flex;
@@ -66,10 +70,9 @@
 
 }
 
-    /* ITEM
- General Styles of the form for the input of the items in the list */
+/* ITEM
 
- /* Style for every item in the list */
+/* Style for EACH item in the list */
 
 .item-container {
   min-height: 30px;
@@ -110,6 +113,32 @@
   text-decoration: line-through;
 }
 
+/*Estilo para los botone "Save List" y "Remove List".*/
+
+.buttom-buttons {
+    
+  width: 150px;
+  height: 40px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+
+  margin: 5px;
+  border: 2px solid white ;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  .save-list-button {
+    background-color: #7ca16b;
+  }
+  .remove-list-button {
+    background-color: #a23c3c;
+  }
+
+
+/* Styles for which messages lists have been saved or deleted*/
+
 .message-container{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -118,8 +147,10 @@
 }
 
 
+/*Special styles for small screens (takes up 100% of the width) // items are arranged on top of each other// the FORM is modified for 100% width */
 
 @media (max-width: 767px) {
+
 
   .CreateList{
     width: 100%;
@@ -137,8 +168,6 @@
     
   }
 
-
-
   .items-list-container {
   justify-content: center;}
 
@@ -152,10 +181,5 @@
    width: calc(25% - 5px); 
         
           }
- .item-text {
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 25px;
-        } 
  
       }

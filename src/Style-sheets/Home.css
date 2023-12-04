@@ -1,16 +1,42 @@
 
+/*General styles for "Create List" and "Save List" buttons */
+
 .top-buttons-container{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  gap: 10px; /* Agregado para establecer la distancia entre elementos */
+  gap: 10px; 
 }
+
+.top-buttons {
+  width: 250px;
+  height: 80px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  border: 2px solid white ;
+  border-radius: 15px;
+  cursor: pointer;
+  
+  }
+  .top-buttons:hover {
+    background-color: #693982;
+  }
+  .create-list-button {
+    background-color: #1f6896;
+  }
+  .open-list-button {
+    background-color: #80ceff;
+  }
+
+/* Styles for the container housing all the lists stored in the database that are opened by clicking on "Open List"*/
 
 .lists-names-buttons-container {
   margin-top: 10px;
-  text-align: center; /* Agregado para centrar los elementos a nivel de texto */
+  text-align: center; 
   gap: 5px;
 }
 
@@ -28,6 +54,9 @@
 .lists-names-buttons:hover {
   background-color: #693982;
 }
+
+/* Style of the container in which the particular list name is displayed*/
+
 .list-name-container {
   width: 100%;
   display: flex;
@@ -45,6 +74,8 @@
   border: none;
 
 }
+
+/*Style for the in small screens-The buttons will be placed one on top of the other.*/ 
 
 @media (max-width: 767px) {
 .top-buttons-container {
