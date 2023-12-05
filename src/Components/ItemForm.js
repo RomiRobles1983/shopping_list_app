@@ -8,8 +8,7 @@ function ItemForm(props){
     // the useState hook is used to create a state variableinput and its corresponding function setInput
     const[input, setInput] = useState("");
 
-   /* The manageChanges function is defined, which is used as an event handler for the onChange event
-     of the input field (when something is typed in the form, this change will be captured).*/
+   /* The manageChanges function is defined:(when something is typed in the form, this change will be captured).*/
     const manageChanges = e => {
        setInput(e.target.value);
     }
@@ -34,7 +33,7 @@ return(
     type="text"
     placeholder="Item to buy"
     text="text"
-    value={input}// para que desaparezca el nombre del último item agregado
+    value={input}// used so that once an item is entered into the list the item-imput is empty again
     onChange={manageChanges}
     />
 

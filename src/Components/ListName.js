@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-//import "../Style-sheets/ListName.css";
 
-const ListName = ({ listName, onListNameChange, isListOpen }) => {
+const ListName = ({ listName, onListNameChange, isListOpen }) => {//The necessary props are defined to handle the list name in the ItemList component.
   const [localListName, setLocalListName] = useState(listName);
 
   useEffect(() => {
@@ -9,7 +8,7 @@ const ListName = ({ listName, onListNameChange, isListOpen }) => {
   }, [listName]);
 
   const handleInputChange = (e) => {
-    // Permite cambiar el nombre solo si la lista no está abierta
+    //  allows to change de name if it is a new list.
     if (!isListOpen) {
       const newName = e.target.value;
       setLocalListName(newName);
@@ -25,7 +24,7 @@ const ListName = ({ listName, onListNameChange, isListOpen }) => {
         placeholder="Name of your list"
         value={localListName}
         onChange={handleInputChange}
-        disabled={isListOpen} // Desactiva el campo si la lista está abierta
+        disabled={isListOpen} //  Disables the possibility to change the name if it is a list that was opened from the database.
       />
     </div>
   );

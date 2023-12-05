@@ -4,16 +4,18 @@ import { useParams } from 'react-router-dom';  // Agrega esta línea
 import ItemList from '../Components/ItemList';  // Ajusta la ruta según tu estructura
 import openListByName from "./api/OpenListByNameRequest";
 
+// OPEN LIST FUNCTION
+
 function OpenList() {
-  const { listName } = useParams();
-  const [items, setItems] = useState([]);
+  const { listName } = useParams(); // Gets the URL parameter using useParams of React Router
+  const [items, setItems] = useState([]);// Defines a state for storing the list elements
   
-  useEffect(() => {
+  useEffect(() => {// // Use useEffect to make an API call when loading the component or when changing listName
     const fetchListData = async () => {
       try {
-        const listData = await openListByName(listName);
+        const listData = await openListByName(listName);// // Call API function to get list data by name
         console.log('List Data received in OpenList.js:', listData);
-        setItems(listData.items);
+        setItems(listData.items);// Update status with list items  
       } catch (error) {
         console.error('Error fetching items for the selected list:', error);
       }
@@ -22,16 +24,15 @@ function OpenList() {
     fetchListData();
   }, [listName]);
 
-  // Llama a tu función con el nombre de la lista si es necesario
   const onListNameChange = (newName) => {
     console.log('New List Name in OpenList:', newName);
-    // Llama a tu función aquí con newName
+  
   };
 
   return (
     <div className="OpenList">
       <div className="complete-list-container">
-        {/* Renderiza tu componente ItemList con los datos obtenidos */}
+        {/* Render ItemList component with the obtained data */}
         <ItemList listName={listName} items={items} onListNameChange={onListNameChange} />
       </div>
     </div>

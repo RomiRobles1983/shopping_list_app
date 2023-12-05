@@ -1,6 +1,6 @@
 const API_URL = `http://localhost:8000`;
 
-const openLists = async () => {
+const openLists = async () => {// // Performs a GET request to the API to open the lists saved in the database.
     try {
         const response = await fetch(`${API_URL}/lists`);
         

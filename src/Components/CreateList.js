@@ -1,15 +1,13 @@
 import React from "react";
 import ItemList from '../Components/ItemList';
-//import "../Style-sheets/CreateList.css";
 
 function CreateList() {
-  const onListNameChange = (newName) => {
-    // Manejar cambios en el nombre de la lista si es necesario
-    // Puedes agregar lógica adicional aquí si es necesario
+  const onListNameChange = (newName) => {//Used to define the name of the list through the changes in the variable
+
     console.log('New List Name:', newName);
   };
 
-  return (
+  return (// Render the ItemList component with some props//Use de funcion onListNameChange like a prop for the ListName component.
     <div className="CreateList">
 
       <ItemList listName="" items={[]} onListNameChange={onListNameChange} />
