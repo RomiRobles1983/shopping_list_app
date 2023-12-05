@@ -1,3 +1,5 @@
+//Define a data model for the shopping list
+
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
@@ -7,7 +9,7 @@ const listSchema = new Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
+      unique: true, // To handle Updates of the lists.
     },
     items: [
       {
@@ -21,7 +23,7 @@ const listSchema = new Schema(
         },
         _id: {
           type: String,
-          default: mongoose.Types.ObjectId,
+          default: mongoose.Types.ObjectId,// To handle remove items & and set as purchased functions.
         },
       },
     ],

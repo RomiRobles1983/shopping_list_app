@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TopButton from "../Components/TopButton";
-import OpenListsRequest from "./api/OpenListsRequest"
+import openLists from "./api/OpenListsRequest";
 import { Link, useHistory } from "react-router-dom"; 
 import "../Style-sheets/Home.css";
 
@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const fetchLists = async () => {
       try {
-        const data = await OpenListsRequest();
+        const data = await openLists();
         console.log('Lists received in Home.js:', data);
         setLists(data);
       } catch (error) {
