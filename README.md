@@ -3,24 +3,29 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Getting Started
+1-After cloning the repository, navigate to the frontend directory
 
-Before running the app, make sure to install the required npm you can run:
+2-Before running the app, make sure to install the required npm you can run:
 
 ### `npm install`
 
+3-In the project directory, you can run:
 
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+### `npm start app.js`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4-Navigate to the backend directory.
+### `cd backend`
+
+5-Run npm install to install the dependencies.
+
+6-To start the backend server and connect to it on port 8000, run:
+### `node index.js`
+The above command is essential for establishing a connection to the backend and be able to open the lists saved in the data base
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ### `npm test`
 
