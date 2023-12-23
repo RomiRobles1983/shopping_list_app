@@ -25,6 +25,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ### `node index.js`
 The above command is essential for establishing a connection to the backend and be able to open the lists saved in the data base
 
+7-refresh the browser.
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ### `npm test`
